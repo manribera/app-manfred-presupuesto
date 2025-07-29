@@ -17,7 +17,7 @@ edad = st.number_input("Edad", min_value=0, step=1)
 # Botón para guardar en Supabase
 if st.button("Guardar en Supabase"):
     if nombre:
-        data = {"Nombre": nombre, "edad": int(edad)}
+        data = {"nombre": nombre, "edad": int(edad)}
         try:
             res = supabase.table("manfred").insert(data).execute()
             if res.data:
@@ -37,7 +37,7 @@ try:
     res = supabase.table("manfred").select("*").execute()
     if res.data:
         for fila in res.data:
-            st.write(f"🧾 {fila['Nombre']} - {fila['edad']} años")
+            st.write(f"🧾 {fila['nombre']} - {fila['edad']} años")
     else:
         st.info("No hay datos aún.")
 except Exception as e:
