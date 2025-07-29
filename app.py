@@ -1,9 +1,8 @@
 import streamlit as st
 from supabase import create_client, Client
 
-# Reemplaza estos datos con los reales desde tu proyecto Supabase
-url = "https://TU_URL_SUPABASE.supabase.co"
-key = "TU_API_KEY_SUPABASE"
+url = "https://unavjraqjvqbsorqtzhj.supabase.co"
+key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVuYXZqcmFxanZxYnNvcnF0emhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE3MjcxMTYsImV4cCI6MjA2NzMwMzExNn0.xnvR7-O-hNK2Jq671I1Yt9WVnBsrR8KY0FhLE3RJUv8"
 
 supabase: Client = create_client(url, key)
 
