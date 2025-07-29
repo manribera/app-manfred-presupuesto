@@ -42,3 +42,16 @@ try:
         st.info("No hay datos aún.")
 except Exception as e:
     st.error(f"❌ Error al consultar los datos desde Supabase: {e}")
+import pandas as pd
+
+# Convertimos los datos a DataFrame
+df = pd.DataFrame(res.data)
+
+# Creamos CSV y habilitamos botón de descarga
+csv = df.to_csv(index=False).encode('utf-8')
+st.download_button(
+    label="⬇️ Descargar registros como CSV",
+    data=csv,
+    file_name="registros_manfred.csv",
+    mime="text/csv"
+)
